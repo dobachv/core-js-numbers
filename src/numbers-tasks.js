@@ -50,7 +50,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage (value1, value2) {
-  if (value1 === value2) 
+  if (value1 === value2)
     return value1;
   else
     return ((value1 + value2) / 2);
@@ -140,7 +140,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
- return Number(value);
+  return Number(value);
 }
 
 /**
@@ -225,7 +225,7 @@ function isPrime(n) {
 function toNumber(value, def) {
   if (isNaN(Number(value)))
     return def;
-  else 
+  else
     return Number(value);
 }
 
@@ -241,7 +241,7 @@ function toNumber(value, def) {
  *   0  => 0
  */
 function getCube(num) {
-  return num**3;
+  return num ** 3;
 }
 
 /**
@@ -408,7 +408,7 @@ function toPrecision(number, precision) {
  * Number(-5)    => -5
  */
 function getNumberValue(number) {
- return number.valueOf();
+  return number.valueOf();
 }
 
 /**
@@ -547,7 +547,7 @@ function roundToNearestInteger(number) {
  * -5.5 => -5
  */
 function getIntegerPartNumber(number) {
-  return  Math.trunc(number);
+  return Math.trunc(number);
 }
 
 /**
