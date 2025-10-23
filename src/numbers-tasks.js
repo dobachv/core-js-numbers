@@ -50,8 +50,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  if (value1 === value2) return value1;
-  else return (value1 + value2) / 2;
+  return value1 === value2 ? value1 : (value1 + value2) / 2;
 }
 
 /**
@@ -69,7 +68,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 }
 
 /**
@@ -179,7 +178,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return Math.round(num / Math.pow(10, pow)) * Math.pow(10, pow);
+  return Math.round(num / 10 ** pow) * 10 ** pow;
 }
 
 /**
@@ -200,7 +199,7 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for (let i = 2; i < n; i++) {
+  for (let i = 2; i < n; i += 1) {
     if (n % i === 0) {
       return false;
     }
@@ -224,8 +223,11 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  if (isNaN(Number(value))) return def;
-  else return Number(value);
+  const num = Number(value);
+  if (Number.isNaN(num)) {
+    return def;
+  }
+  return num;
 }
 
 /**
@@ -260,8 +262,9 @@ function getFibonacciNumber(index) {
   if (index === 0) return 0;
   let a = 0;
   let b = 1;
-  for (let i = 2; i <= index; i++) {
-    let temp = a + b;
+  let temp = 0;
+  for (let i = 2; i <= index; i += 1) {
+    temp = a + b;
     a = b;
     b = temp;
   }
@@ -281,7 +284,7 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let sum = 0;
-  for (let i = 1; i < n + 1; i++) {
+  for (let i = 1; i < n + 1; i += 1) {
     sum += i;
   }
   return sum;
@@ -300,9 +303,10 @@ function getSumToN(n) {
  */
 function getSumOfDigits(num) {
   let sum = 0;
-  while (num > 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
+  let temp = num;
+  while (temp > 0) {
+    sum += temp % 10;
+    temp = Math.floor(num / 10);
   }
   return sum;
 }
