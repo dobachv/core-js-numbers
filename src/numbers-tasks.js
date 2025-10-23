@@ -283,11 +283,7 @@ function getFibonacciNumber(index) {
  *   1  => 1
  */
 function getSumToN(n) {
-  let sum = 0;
-  for (let i = 1; i < n + 1; i += 1) {
-    sum += i;
-  }
-  return sum;
+  return (n * (n + 1)) / 2;
 }
 
 /**
@@ -306,7 +302,7 @@ function getSumOfDigits(num) {
   let temp = num;
   while (temp > 0) {
     sum += temp % 10;
-    temp = Math.floor(num / 10);
+    temp = Math.floor(temp / 10);
   }
   return sum;
 }
