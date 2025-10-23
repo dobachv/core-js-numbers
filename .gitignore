@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+
+# IDE и редакторы
+.vscode/
+.idea/
+
+# Логи
+logs/
+*.log
+
+# Деплой
+dist/
+build/
+
+# Конфигурационные файлы
+*.local
